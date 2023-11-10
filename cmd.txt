@@ -1,0 +1,25 @@
+To repeatedly run a curl command every 5 seconds using a command line interface, you can use a loop. The exact syntax depends on your operating system
+
+  linux:
+while true; do
+    curl your_url_here
+    sleep 5
+done
+
+
+For Windows, you can use a batch script:
+
+:loop
+curl your_url_here
+timeout /t 5 >nul
+goto loop
+
+https://www.webpagetest.org/
+
+https://check-host.net/
+
+
+  
+---
+This command flushes and resets the contents of the DNS client resolver cache. It can be useful if you are having DNS resolution issues.  
+  ipconfig /flushdns
