@@ -17,9 +17,16 @@ goto loop
 https://www.webpagetest.org/
 
 https://check-host.net/
-
-
   
 ---
 This command flushes and resets the contents of the DNS client resolver cache. It can be useful if you are having DNS resolution issues.  
   ipconfig /flushdns
+--------------------------------------------------------------------------------------------
+
+#! /bin/bash
+sudo apt update -y
+sudo apt install nginx -y
+sudo systemctl enable nginx
+echo "This host-IP-adress $(hostname -i)" > /var/www/html/index.nginx-debian.html
+
+----------------------------------------------------------------------------------
