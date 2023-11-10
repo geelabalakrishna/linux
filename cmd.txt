@@ -68,6 +68,15 @@ service service-name restart
 ---------------------------------------------------------------------------------------------------------------
 
 
+<?php
+// Execute the ifconfig command
+$result = shell_exec('pwd');
+
+// Output the result
+echo "<pre>$result</pre>";
+?>
+
+
 
 
 
