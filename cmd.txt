@@ -30,3 +30,65 @@ sudo systemctl enable nginx
 echo "This host-IP-adress $(hostname -i)" > /var/www/html/index.nginx-debian.html
 
 ----------------------------------------------------------------------------------
+
+systemctl is a command-line utility in Linux systems that is used to control and communicate with the systemd system and service manager.
+systemd is a system and service manager for Linux, which is widely used in modern distributions. Here are some common systemctl commands:
+
+systemctl:
+
+systemctl is a more modern and feature-rich command that is part of the systemd init system.
+
+Lists all active units (services, sockets, devices, etc.).
+
+systemctl list-units
+
+systemctl list-units --type=service
+
+systemctl start service-name
+systemctl stop service-name
+systemctl restart service-name
+systemctl enable service-name
+systemctl disable service-name
+systemctl status service-name
+
+Enables the specified service to start automatically on boot.
+
+systemctl enable service-name
+systemctl disable service-name
+systemctl status service-name
+Reloads the systemd manager configuration.
+systemctl daemon-reload
+journalctl -u service-name
+
+
+
+service service-name start
+service service-name stop
+service service-name restart
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
