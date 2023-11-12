@@ -24,3 +24,10 @@ cat /var/log/httpd/
    23  cd /var/log/httpd
    24  ls -lh
    25  history
+
+How to check when yum metadata will expire?
+
+I can clear the cache with yum clean all or, more quickly, with yum clean expire-cache
+
+
+
