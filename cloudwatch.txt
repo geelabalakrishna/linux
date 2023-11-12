@@ -25,9 +25,117 @@ cat /var/log/httpd/
    24  ls -lh
    25  history
 
+
 How to check when yum metadata will expire?
 
 I can clear the cache with yum clean all or, more quickly, with yum clean expire-cache
 
 
 
+{
+        "agent": {
+                "metrics_collection_interval": 60,
+                "run_as_user": "root"
+        },
+        "logs": {
+                "logs_collected": {
+                        "files": {
+                                "collect_list": [
+                                        {
+                                                "file_path": "/var/log/httpd/access.log",
+                                                "log_group_name": "access.log",
+                                                "log_stream_name": "{hostname}",
+                                                "retention_in_days": -1
+                                        }
+                                ]
+                        }
+                }
+        },
+        "metrics": {
+                "metrics_collected": {
+                        "collectd": {
+                                "metrics_aggregation_interval": 60
+                        },
+                        "cpu": {
+                                "measurement": [
+                                        "cpu_usage_idle"
+                                ],
+                                "metrics_collection_interval": 60,
+                                "resources": [
+                                        "*"
+                                ],
+                                "totalcpu": true
+                        },
+                        "disk": {
+                                "measurement": [
+                                        "used_percent"
+                                ],
+                                "metrics_collection_interval": 60,
+                                "resources": [
+                                        "*"
+                                ]
+                        },
+                        "diskio": {
+                                "measurement": [
+                                        "write_bytes",
+                                        "read_bytes",
+                                        "writes",
+                                        "reads"
+                                ],
+                                "metrics_collection_interval": 60,
+                                "resources": [
+                                        "*"
+                                ]
+                        },
+                        "mem": {
+                                "measurement": [
+                                        "mem_used_percent"
+                                ],
+                                "metrics_collection_interval": 60
+                        },
+                        "net": {
+                                "measurement": [
+                                        "bytes_sent",
+                                        "bytes_recv",
+                                        "packets_sent",
+                                        "packets_recv"
+                                ],
+                                "metrics_collection_interval": 60,
+                                "resources": [
+                                        "*"
+                                ]
+                        },
+                        "statsd": {
+                                "metrics_aggregation_interval": 60,
+                                "metrics_collection_interval": 10,
+                                "service_address": ":8125"
+                        },
+                        "swap": {
+                                "measurement": [
+                                        "swap_used_percent"
+                                ],
+                                "metrics_collection_interval": 60
+                        }
+                }
+        }
+}
+Please check the above content of the config.
+The config file is also located at /opt/aws/amazon-cloudwatch-agent/bin/config.json.
+
+
+sudo dpkg -i amazon-cloudwatch-agent.deb
+   89  https://s3.amazonaws.com/amazoncloudwatch-agent/redhat/amd64/latest/amazon-cloudwatch-agent.rpm
+   90  ls
+   91  https://s3.amazonaws.com/amazoncloudwatch-agent/redhat/amd64/latest/amazon-cloudwatch-agent.rpm
+   92  wget https://s3.amazonaws.com/amazoncloudwatch-agent/redhat/amd64/latest/amazon-cloudwatch-agent.rpm
+   93  rpm -U amazon-cloudwatch-agent.rpm
+   94  /opt/aws/amazon-cloudwatch-agent
+   95  ls
+   96  sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+   97  sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status
+   98  sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a start
+   99  sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status
+  100  systemctl status awslogs
+  101  systemctl status httpd
+  102  systemctl status amazon-cloudwatch-agent-ctl
+  103  systemctl status amazon-cloudwatch-agent
