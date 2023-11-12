@@ -139,3 +139,5 @@ sudo dpkg -i amazon-cloudwatch-agent.deb
   101  systemctl status httpd
   102  systemctl status amazon-cloudwatch-agent-ctl
   103  systemctl status amazon-cloudwatch-agent
+
+https://devopscube.com/how-to-setup-and-push-serverapplication-logs-to-aws-cloudwatch/
