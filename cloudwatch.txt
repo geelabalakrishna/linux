@@ -141,3 +141,10 @@ sudo dpkg -i amazon-cloudwatch-agent.deb
   103  systemctl status amazon-cloudwatch-agent
 
 https://devopscube.com/how-to-setup-and-push-serverapplication-logs-to-aws-cloudwatch/
+
+
+
+
+2023-11-12T11:29:18.670Z        info    ec2tagger/ec2tagger.go:500      ec2tagger: Initial retrieval of tags succeeded {"kind": "processor", "name": "ec2tagger", "pipeline": "metrics/host"}
+2023-11-12T11:29:18.670Z        info    ec2tagger/ec2tagger.go:411      ec2tagger: EC2 tagger has started, finished initial retrieval of tags and Volumes      {"kind": "processor", "name": "ec2tagger", "pipeline": "metrics/host"}
+
