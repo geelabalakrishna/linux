@@ -1,1 +1,26 @@
 
+cat /var/log/httpd/
+    2  cat /var/log/httpd/access_log
+    3  watch -n 5 cat /var/log/httpd/access_log
+    4  cur 10.10.0.34
+    5  curl 10.10.0.34
+    6  ps aux
+    7  ps aux | httpd
+    8  systemctl status httpd
+    9  systemctl start httpd
+   10  systemctl status httpd
+   11  systemctl enable httpd
+   12  systemctl status httpd
+   13  curl 10.10.0.34
+   14  vim lw.html
+   15  ls
+   16  cd /var/www/html
+   17  ls
+   18  vim lw.html
+   19  cd /var/log/httpd
+   20  ls
+   21  cat access_log
+   22  watch cat access_log
+   23  cd /var/log/httpd
+   24  ls -lh
+   25  history
