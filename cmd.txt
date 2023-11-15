@@ -78,6 +78,11 @@ echo "<pre>$result</pre>";
 
 
 
+linux
+route -n 
+windows route PRINT
+
+
 
 
 
