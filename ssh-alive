@@ -6,3 +6,6 @@ ClientAliveInterval 6000
 ClientAliveCountMax 3
 
 service restart sshd.service
+
+
+timeout interval = ClientAliveInterval * ClientAliveCountMax
