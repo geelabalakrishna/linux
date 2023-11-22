@@ -1,0 +1,8 @@
+ssh alive logertime
+
+options related to ssh inactivity in /etc/ssh/sshd_config file as follows
+
+ClientAliveInterval 6000
+ClientAliveCountMax 3
+
+service restart sshd.service
