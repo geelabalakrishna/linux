@@ -82,7 +82,7 @@ linux
 route -n 
 windows route PRINT
 
-
+bala
 
 
 
