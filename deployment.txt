@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+  labels:
+    app: server
+  namespace: nginx
+spec:
+  replicas: 4
+  selectors:
+    matchlabels:
+      app: server
+      app: front
+  minReadySeconds: 20
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavaiable: 1
+  template:
+    metadata:
+      labels:
+        app: server
+        app: front
+    containers:
+      - name: container1
+        image: nginx
+        ports:
+          - conatinerPort: 80
+
+
+
+
+
+  
+
+ 
