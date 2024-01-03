@@ -81,10 +81,29 @@ echo "<pre>$result</pre>";
 linux
 route -n 
 windows route PRINT
+-----------------------------------------------------------------------
+efs
+
+apt update
+apt install nginx -y
+
+sudo apt install nfs-common
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-093b4661169625b5f.efs.us-east-1.amazonaws.com:/ /var/www/html/
+cd /var/www/html/
+vi /etc/fstab
+
+file_system_id.efs.aws-region.amazonaws.com:/ mount_point nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,_netdev 0 0
+
+
+fs-093b4661169625b5f.efs.us-east-1.amazonaws.com:/ /var/www/html/ nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport,_netdev 0 0
+
+echo "This host-IP-adress $(hostname -i)" > /var/www/html/index.html
+cat /var/www/html/index.html
+df -hT
 
 
 
-
+=============================================================================================================================================
 
 
 
