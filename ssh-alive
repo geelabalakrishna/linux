@@ -6,6 +6,7 @@ ClientAliveInterval 6000
 ClientAliveCountMax 3
 
 service restart sshd.service
+systemctl sshd status
 
 
 timeout interval = ClientAliveInterval * ClientAliveCountMax
